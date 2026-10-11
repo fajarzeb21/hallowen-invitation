@@ -1,9 +1,22 @@
-
 import invitationData from "../data/InvitationData";
 
 function Footer() {
+  const shareMessage = `🎃 You're invited to ${invitationData.partyName}!
+
+📅 Date: ${invitationData.eventDate}
+🕒 Time: ${invitationData.eventTime}
+📍 Location: ${invitationData.eventLocation}
+
+Join us for a spooky night! 👻
+
+${window.location.href.split("#")[0]}`;
+
+  const whatsappLink = `https://wa.me/?text=${encodeURIComponent(
+    shareMessage
+  )}`;
+
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <a href="#home" className="logo">
         🎃 {invitationData.brandName}
       </a>
@@ -13,12 +26,12 @@ function Footer() {
       </p>
 
       <a
-        href={invitationData.etsyUrl}
+        href={whatsappLink}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         className="footer-link"
       >
-        {invitationData.preorderText}
+        Share on WhatsApp ↗
       </a>
 
       <span>
@@ -29,4 +42,3 @@ function Footer() {
 }
 
 export default Footer;
-
