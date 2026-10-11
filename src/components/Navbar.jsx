@@ -13,9 +13,7 @@ function Navbar() {
         <a href="#countdown">Countdown</a>
       </div>
 
-      <a href="#invitation" className="nav-button">
-        View Invitation ↗
-      </a>
+     
     </nav>
   );
 }
